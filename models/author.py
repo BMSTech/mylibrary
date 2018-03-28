@@ -8,5 +8,6 @@ class Author(models.Model):
     _description = 'My library authors'
 
     name = fields.Char("Tên tác giả")
-    parent_category = fields.Many2one('res.country', 'Quốc gia')
+    image = fields.Binary("Ảnh tác giả")
+    nation = fields.Many2one('res.country', 'Quốc gia')
     description = fields.Text("Tiểu sử")
