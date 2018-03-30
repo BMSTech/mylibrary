@@ -14,9 +14,12 @@
         'views/book.xml',
         'views/author.xml',
         'views/category.xml',
+        #'views/book_loan.xml',
         'views/menu.xml',
     ],
-    'demo': [],
+    'demo': [
+        'demo/demo.xml',
+    ],
     'css': [],
     'qweb': [],
     'installable': True,
