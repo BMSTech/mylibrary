@@ -14,8 +14,15 @@
         'views/book.xml',
         'views/author.xml',
         'views/category.xml',
-        #'views/book_loan.xml',
+        'views/book_loan.xml',
+        'views/employee.xml',
+        'views/res_partner.xml',
+        'security/group.xml',
+        'security/ir.model.access.csv',
+        'security/record_rule.xml',
         'views/menu.xml',
+
+        'tests/domain.xml',
     ],
     'demo': [
         'demo/demo.xml',

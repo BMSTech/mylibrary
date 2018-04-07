@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <record id="domain_act" model="ir.actions.act_window">
+           <field name="name">Domain test</field>
+           <field name="type">ir.actions.act_window</field>
+           <field name="res_model">test.domain</field>
+           <field name="view_mode">form</field>
+       </record>
+
+
+        <record id="domain_form" model="ir.ui.view">
+            <field name="name">Domain test</field>
+            <field name="model">test.domain</field>
+            <field name="arch" type="xml">
+                <form string="Domain test">
+                    <sheet>
+                        <group>
+                            <field name="book"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <menuitem id="test_menu" name="Test" sequence="0"/>
+        <menuitem id="domain_menu" name="Domain test" parent="test_menu" action="domain_act" sequence="0"/>
+
+    </data>
+</odoo>

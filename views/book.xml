@@ -6,19 +6,105 @@
             <field name="name">Sách</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">mylib.book</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
             <field name="help" type="html">
-              <p class="oe_view_nocontent_create">
-                Tạo sách đầu tiên của bạn!
-              </p><p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
+                <p class="oe_view_nocontent_create">
+                    Tạo sách đầu tiên của bạn!
+                </p><p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                    sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </field>
+        </record>
+
+        <record id="mylib_book_kanban" model="ir.ui.view">
+            <field name="name">Sách</field>
+            <field name="model">mylib.book</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"/>
+                    <field name="image"/>
+                    <field name="amount"/>
+                    <field name="code"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <img t-att-src="kanban_image('mylib.book', 'image', record.id.value)"
+                                     t-att-title="record.id.value"
+                                     width="64" height="64"
+                                     class="o_kanban_image pull-left"/>
+
+                                <div class="oe_kanban_details">
+                                    <strong><field name="name"/></strong><br/>
+                                    Mã sách: <field name="code"/><br/>
+                                    Số lượng: <field name="amount"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="mylib_book_tree" model="ir.ui.view">
+            <field name="name">Sách</field>
+            <field name="model">mylib.book</field>
+            <field name="arch" type="xml">
+                <tree string="Sách">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="author"/>
+                    <field name="category"/>
+                    <field name="amount"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="mylib_book_form" model="ir.ui.view">
+            <field name="name">Sách</field>
+            <field name="model">mylib.book</field>
+            <field name="arch" type="xml">
+                <form string="Sách">
+                    <sheet>
+                        <field name="image" widget="image" class="oe_avatar"/>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Tên sách"/>
+                            </h1>
+                        </div>
+
+                        <notebook>
+                            <page string="Thông tin sách">
+                                <group>
+                                    <group>
+                                        <field name="code"/>
+                                        <field name="year"/>
+                                        <field name="category" widget="many2many_tags"/>
+                                    </group>
+
+                                    <group>
+                                        <field name="author" widget="many2many_tags"/>
+                                        <field name="amount"/>
+                                        <field name="state"/>
+                                    </group>
+                                </group>
+                            </page>
+
+                            <page string="Mô tả sách">
+                                <group>
+                                    <field name="description"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
             </field>
         </record>
 

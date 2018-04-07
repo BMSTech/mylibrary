@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <record id="mylib_contact_act" model="ir.actions.act_window">
+            <field name="name">Liên hệ</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mylib.contact</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
         <menuitem id="mylib_root_menu" name="Thư viện của tôi" sequence="1"/>
             <menuitem id="mylib_book_menu" name="Sách" parent="mylib_root_menu"
@@ -10,5 +16,11 @@
             <menuitem id="mylib_category_menu" name="Danh mục sách" parent="mylib_root_menu"
                       action="mylib_category_act" sequence="10"/>
 
+            <menuitem id="mylib_book_loan_menu" name="Muợn sách" parent="mylib_root_menu"
+                      action="mylib_book_loan_act" sequence="15"/>
+            <menuitem id="mylib_employee_menu" name="Nhân viên" parent="mylib_root_menu"
+                      action="mylib_employee_act" sequence="20"/>
+            <menuitem id="mylib_contact_menu" name=" Liên hệ" parent="mylib_root_menu"
+                          action="mylib_contact_act" sequence="20"/>
     </data>
 </odoo>

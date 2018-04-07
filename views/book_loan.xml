@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mylib_book_loan_act" model="ir.actions.act_window">
+            <field name="name">Mượn sách</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mylib.book.loan</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="mylib_book_loan_tree" model="ir.ui.view">
+            <field name="name">Mượn sách</field>
+            <field name="model">mylib.book.loan</field>
+            <field name="arch" type="xml">
+                <tree string="Mượn sách">
+                    <field name="name"/>
+                    <field name="user"/>
+                    <field name="date"/>
+                    <field name="date_return"/>
+                    <field name="is_archive"/>
+                </tree>
+            </field>
+        </record>
+
+       <record id="mylib_book_loan_form" model="ir.ui.view">
+            <field name="name">Mượn sách</field>
+            <field name="model">mylib.book.loan</field>
+            <field name="arch" type="xml">
+                <form string="Mượn sách">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="user"/>
+                            <field name="date"/>
+                            <field name="date_return"/>
+                            <field name="is_archive"/>
+                            <field name="create_uid" groups="mylibrary.mylib_manager"/>
+                        </group>
+                        <group>
+                            <field name="loan_detail">
+                                <tree editable="bottom">
+                                    <field name="book"/>
+                                    <field name="amount"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

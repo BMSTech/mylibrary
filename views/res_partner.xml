@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="mylib_res_partner_inherit_form" model="ir.ui.view">
+            <field name="name">Đối tác</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='lang']" position="after">
+                    <!-- position: inside, after, before, replace -->
+                    <field name="is_blacklist"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

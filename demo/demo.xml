@@ -40,6 +40,7 @@
             <field name="name">Lược sử thời gian (1988)</field>
             <field name="code">1421051988</field>
             <field name="year" eval="1988"/>
+            <field name="amount" eval="20"/>
             <field name="author" eval="[(6, 0, [ref('author_1'), ref('author_2')])]"/>
             <field name="category" eval="[(6, 0, [ref('cate_1'), ref('cate_2')])]"/>
         </record>
@@ -48,6 +49,7 @@
             <field name="name">Vũ trụ trong vỏ hạt dẻ (2001)</field>
             <field name="code">1421052001</field>
             <field name="year" eval="2001"/>
+            <field name="amount" eval="20"/>
             <field name="author" eval="[(6, 0, [ref('author_1'), ref('author_2')])]"/>
             <field name="category" eval="[(6, 0, [ref('cate_2'), ref('cate_4')])]"/>
         </record>
@@ -56,6 +58,25 @@
             <field name="name">The Grand Design (2010)</field>
             <field name="code">1421052010</field>
             <field name="year" eval="2010"/>
+            <field name="amount" eval="10"/>
+            <field name="author" eval="[(6, 0, [ref('author_1'), ref('author_3')])]"/>
+            <field name="category" eval="[(6, 0, [ref('cate_3'), ref('cate_4')])]"/>
+        </record>
+
+        <record id="book_4" model="mylib.book">
+            <field name="name">The Earth (1999)</field>
+            <field name="code">1421052011</field>
+            <field name="year" eval="1999"/>
+            <field name="amount" eval="5"/>
+            <field name="author" eval="[(6, 0, [ref('author_1'), ref('author_3')])]"/>
+            <field name="category" eval="[(6, 0, [ref('cate_3'), ref('cate_4')])]"/>
+        </record>
+
+        <record id="book_5" model="mylib.book">
+            <field name="name">Private (1922)</field>
+            <field name="code">1421052211</field>
+            <field name="year" eval="1922"/>
+            <field name="amount" eval="12"/>
             <field name="author" eval="[(6, 0, [ref('author_1'), ref('author_3')])]"/>
             <field name="category" eval="[(6, 0, [ref('cate_3'), ref('cate_4')])]"/>
         </record>

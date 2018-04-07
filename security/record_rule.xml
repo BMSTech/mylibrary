@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--Nhân viên chỉ nhìn thấy được những phiếu mượn do mình tạo!-->
+        <record id="employee_book_loan_rule_1" model="ir.rule">
+            <field name="name">Nhân viên chỉ nhìn thấy được những phiếu mượn do mình tạo!</field>
+            <field ref="model_mylib_book_loan" name="model_id"/>
+            <field name="domain_force">[('create_uid', '=', user.id)]</field>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups" eval="[(4, ref('mylib_employee'))]"/>
+        </record>
+
+        <!--Nhân viên sẽ chỉ sửa được những phiếu mượn chưa được lưu trữ-->
+        <record id="employee_book_loan_rule_2" model="ir.rule">
+            <field name="name">Nhân viên sẽ chỉ sửa được những phiếu mượn chưa được lưu trữ</field>
+            <field ref="model_mylib_book_loan" name="model_id"/>
+            <field name="domain_force">[('is_archive', '=', False)]</field>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups" eval="[(4, ref('mylib_employee'))]"/>
+        </record>
+
+    </data>
+</odoo>
