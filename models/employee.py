@@ -13,6 +13,8 @@ class Contact(models.Model):
     @api.constrains("phone")
     def _phone_validate(self):
         for employee in self:
+            if not employee.phone:
+                continue
             if len(employee.phone) < 10:
                 raise exceptions.ValidationError(u"Số điện thoại chưa hợp lệ!")
 

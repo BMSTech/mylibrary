@@ -8,4 +8,6 @@ class TestDomain(models.Model):
     _description = 'domain test'
     _rec_name = 'book'
 
-    book = fields.Many2one("mylib.book", 'Sách của tôi')
+    book = fields.Many2one("mylib.book", 'Sách của tôi',
+                           domain="[('year', '<', 2000), '!' ,('state', '=', 'con')]"
+                           )
