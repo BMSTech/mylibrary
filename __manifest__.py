@@ -22,7 +22,7 @@
         'security/record_rule.xml',
         'views/menu.xml',
 
-        'tests/domain.xml',
+        # 'tests/domain.xml',
     ],
     'demo': [
         'demo/demo.xml',
