@@ -2,6 +2,7 @@
 <odoo>
     <data noupdate="0">
 
+<!--data mẫu cho model tác giả mylib.author -->
         <record id="author_1" model="mylib.author">
             <field name="name">Stephen Hawking</field>
         </record>
@@ -19,6 +20,7 @@
         </record>
 
 
+<!--data mẫu cho model danh mục sách mylib.category -->
         <record id="cate_1" model="mylib.category">
             <field name="name">Toán học</field>
         </record>
@@ -35,12 +37,13 @@
             <field name="name">Thiên văn học</field>
         </record>
 
-
+<!--data mẫu cho mỗi cuốn sách, model mylib.book -->
         <record id="book_1" model="mylib.book">
             <field name="name">Lược sử thời gian (1988)</field>
             <field name="code">1421051988</field>
             <field name="year" eval="1988"/>
-            <field name="author" eval="[(6, 0, [ref('author_1'), ref('author_2')])]"/>
+            <field name="author" eval="[(6, 0, [ref('author_1'), ref('author_2')])]"/> <!--trường many2many -->
+                                                                                       <!-- nếu là many2one thì dùng eval="[(4, ref('author_1'))] -->
             <field name="category" eval="[(6, 0, [ref('cate_1'), ref('cate_2')])]"/>
         </record>
 
