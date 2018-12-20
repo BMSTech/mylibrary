@@ -26,7 +26,7 @@ class Book(models.Model):
     @api.constrains("code")
     def _code_validate(self):
         for book in self:
-            if book.code < 4:
+            if len(book.code) < 4:
                 raise exceptions.ValidationError(u"Mã sách quá ngắn!")
 
     @api.constrains("amount")
