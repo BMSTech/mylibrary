@@ -18,7 +18,7 @@
         'views/menu.xml',
     ],
     'demo': [
-        'demo/demo.xml',
+        # 'demo/demo.xml',
     ],
     'css': [],
     'qweb': [],
